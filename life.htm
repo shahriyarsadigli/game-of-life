@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- 
+    CSCI 2408 Computer Graphics Fall 2022 
+    (c)2022 by Shahriyar Sadigli
+    Submitted in partial fulfillment of the requirements of the course.
+
+    the link to the video explanation: https://www.facebook.com/100027917543876/videos/869848340713789/ 
+-->
+<html>
+    <head>
+        <title>Homework 1 - Bitmap images</title>       
+
+    </head>
+    <body>
+        <center>
+            <canvas id="gl-canvas" width="500" height="500" >
+            Sorry ... your browser doesn't support the HTML5 canvas element.
+            </canvas>
+        </center>
+  
+    <div class="buttons">
+        <button id="start"><span>Start</span></button>
+        <!-- hide the pause button as we are going to access pausing through start button -->
+        <button id="pause" hidden><span>Pause</span></button> 
+        <button id="next"><span>Next</span></button>
+        <button id="reset"><span>Reset</span></button>
+
+        <br><br>
+        <!-- get the tick interval as an input by the user (in milliseconds) -->
+        <label for="tick">Tick Interval (in ms):</label>
+        <input type="number" name="tick" id="tick">
+        <button onclick="updateTickInterval(document.getElementById('tick').value)">OK</button>
+
+
+        <br><br>
+        <button id="download">Download Grid</button>
+        <br><br>
+        <label for="upload">Upload Grid:</label>
+        <input id="upload" type="file">
+
+        </div>
+        <script type="text/javascript" src="life.js"></script>
+    </body>
+
+   
+</html>
