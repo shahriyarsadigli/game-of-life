@@ -1,9 +1,3 @@
-/*
-    CSCI 2408 Computer Graphics Fall 2022 
-    (c)2022 by Shahriyar Sadigli 
-    Submitted in partial fulfillment of the requirements of the course.
-*/
-
 // the reference to the 2d context of our canvas
 var canvas = document.getElementById("gl-canvas");
 var context = canvas.getContext("2d");
