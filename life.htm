@@ -1,39 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Homework 1 - Bitmap images</title>       
-
-    </head>
-    <body>
-        <center>
-            <canvas id="gl-canvas" width="500" height="500" >
+<head>
+    <title>Homework 1 - Bitmap images</title>       
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('endless-constellation.svg');
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="number"] {
+            padding: 5px;
+            width: 80px;
+        }
+        input[type="file"] {
+            padding: 5px;
+            width: 150px;
+        }
+        label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas id="gl-canvas" width="500" height="500">
             Sorry ... your browser doesn't support the HTML5 canvas element.
-            </canvas>
-        </center>
-  
-    <div class="buttons">
-        <button id="start"><span>Start</span></button>
-        <!-- hide the pause button as we are going to access pausing through start button -->
-        <button id="pause" hidden><span>Pause</span></button> 
-        <button id="next"><span>Next</span></button>
-        <button id="reset"><span>Reset</span></button>
+        </canvas>
+    
+        <div class="buttons">
+            <button id="start"><span>Start</span></button>
+            <!-- hide the pause button as we are going to access pausing through start button -->
+            <button id="pause" hidden><span>Pause</span></button> 
+            <button id="next"><span>Next</span></button>
+            <button id="reset"><span>Reset</span></button>
 
-        <br><br>
-        <!-- get the tick interval as an input by the user (in milliseconds) -->
-        <label for="tick">Tick Interval (in ms):</label>
-        <input type="number" name="tick" id="tick">
-        <button onclick="updateTickInterval(document.getElementById('tick').value)">OK</button>
+            <br><br>
+            <!-- get the tick interval as an input by the user (in milliseconds) -->
+            <label for="tick">Tick Interval (in ms):</label>
+            <input type="number" name="tick" id="tick">
+            <button onclick="updateTickInterval(document.getElementById('tick').value)">OK</button>
 
-
-        <br><br>
-        <button id="download">Download Grid</button>
-        <br><br>
-        <label for="upload">Upload Grid:</label>
-        <input id="upload" type="file">
-
+            <br><br>
+            <button id="download">Download Grid</button>
+            <br><br>
+            <label for="upload">Upload Grid:</label>
+            <input id="upload" type="file">
         </div>
-        <script type="text/javascript" src="life.js"></script>
-    </body>
-
-   
+    </div>
+    <script type="text/javascript" src="life.js"></script>
+</body>
 </html>
